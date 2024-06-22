@@ -1,0 +1,7 @@
+env
+build
+node_modules
+unix.sock
+__pycache__
+.pyc
+.env

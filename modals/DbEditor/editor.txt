@@ -1,0 +1,187 @@
+[
+  {
+    "id": "users",
+    "position": {
+      "top": 200,
+      "left": 304
+    },
+    "rows": [
+      {
+        "data": {
+          "field_name": "pk",
+          "name": "pk",
+          "type": "BigAutoField"
+        },
+        "id": "pk"
+      },
+      {
+        "data": {
+          "field_name": "username",
+          "id": "username",
+          "name": "username",
+          "null": false,
+          "type": "CharField"
+        },
+        "id": "username"
+      },
+      {
+        "data": {
+          "field_name": "email",
+          "id": "email",
+          "name": "email",
+          "options_target": "Not selected",
+          "type": "CharField",
+          "null": false
+        },
+        "id": "email"
+      },
+      {
+        "data": {
+          "default": "",
+          "field_name": "password_hash",
+          "id": "password_hash",
+          "name": "password_hash",
+          "type": "CharField",
+          "null": false
+        },
+        "id": "password_hash"
+      },
+      {
+        "data": {
+          "field_name": "created_at",
+          "id": "created_at",
+          "name": "created_at",
+          "on_delete": "DO_NOTHING",
+          "related_name": "some_table_id",
+          "target": "some_table_1",
+          "type": "DateField",
+          "auto_now_add": false,
+          "auto_now": true,
+          "null": false
+        },
+        "id": "created_at"
+      },
+      {
+        "data": {
+          "default": "0.0",
+          "field_name": "updated_at",
+          "id": "updated_at",
+          "name": "updated_at",
+          "null": false,
+          "type": "DateField",
+          "auto_now_add": true
+        },
+        "id": "updated_at"
+      }
+    ],
+    "data": {
+      "id": "users",
+      "name": "Users",
+      "table_name": "users"
+    },
+    "type": "table"
+  },
+  {
+    "id": "roles",
+    "position": {
+      "top": 200,
+      "left": 1216
+    },
+    "rows": [
+      {
+        "data": {
+          "field_name": "pk",
+          "name": "pk",
+          "type": "BigAutoField"
+        },
+        "id": "pk"
+      },
+      {
+        "data": {
+          "field_name": "role_name",
+          "id": "role_name",
+          "name": "role_name",
+          "related_name": "someVal",
+          "target": "some_value",
+          "type": "CharField"
+        },
+        "id": "role_name"
+      },
+      {
+        "data": {
+          "field_name": "created_at",
+          "id": "created_at",
+          "name": "created_at",
+          "related_name": "some_value_1",
+          "target": "some_table_1",
+          "type": "DateField",
+          "auto_now": true
+        },
+        "id": "created_at"
+      },
+      {
+        "id": "updated_at",
+        "data": {
+          "name": "updated_at",
+          "field_name": "updated_at",
+          "id": "updated_at",
+          "type": "DateField",
+          "auto_now": true
+        }
+      }
+    ],
+    "data": {
+      "id": "roles",
+      "name": "Roles",
+      "table_name": "roles"
+    },
+    "type": "table"
+  },
+  {
+    "id": "user_roles",
+    "position": {
+      "top": 465,
+      "left": 758
+    },
+    "rows": [
+      {
+        "id": "pk",
+        "data": {
+          "type": "BigAutoField",
+          "name": "pk",
+          "field_name": "pk"
+        }
+      },
+      {
+        "id": "user_id",
+        "data": {
+          "name": "user_id",
+          "field_name": "user_id",
+          "id": "user_id",
+          "type": "ForeignKey",
+          "target": "users",
+          "related_name": "userId",
+          "on_delete": "CASCADE"
+        }
+      },
+      {
+        "id": "roles_id",
+        "data": {
+          "name": "rolesId",
+          "field_name": "roles_id",
+          "id": "roles_id",
+          "type": "ForeignKey",
+          "target": "roles",
+          "related_name": "rolesId",
+          "on_delete": "CASCADE"
+        }
+      }
+    ],
+    "data": {
+      "name": "UserRoles",
+      "table_name": "user_roles",
+      "id": "user_roles"
+    },
+    "type": "table"
+  }
+]
