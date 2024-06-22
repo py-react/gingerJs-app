@@ -7,17 +7,17 @@ const keyFeatureDetails = [
     heading:"Visualize Your Database Structure",
     subHeading:"Our intuitive interface allows you to easily visualize your database schema, including tables, columns, and relationships.",
     demoLink:"/dbEditor",
-    signUpLink:"/signUp"
+    signUpLink:"/login?next_url=/dbEditor"
   },
   {
     heading:"Explore Table Relationships",
     subHeading:"Understand how your tables are connected and the relationships between them.",
     demoLink:"/dbEditor",
-    signUpLink:"/signUp"
+    signUpLink:"/login?next_url=/dbEditor"
   }
 ]
 
-export default function Home({isDev}) {
+export default function Home({authenticated}) {
   // const navigate =  useNavigate()
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -37,19 +37,21 @@ export default function Home({isDev}) {
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link
-                    to="#"
+                    to="/dbEditor"
                     className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
                     
                   >
                     Try Demo
                   </Link>
-                  <Link
-                    to="#"
-                    className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-                    
-                  >
-                    Sign Up
-                  </Link>
+                  {authenticated !== "authenticated" && (
+                    <Link
+                      to="/login?next_url=/dbEditor"
+                      className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+                      
+                    >
+                      Sign Up
+                    </Link>
+                  )}
                 </div>
               </div>
               <img
@@ -122,17 +124,17 @@ export default function Home({isDev}) {
                 <Link
                   to={featureDetails.demoLink}
                   className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                  onClick={()=>console.log("hello from click")}
-                  
                 >
                   Try Demo
                 </Link>
-                <Link
-                  to={featureDetails.signUpLink}
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-                >
-                  Sign Up
-                </Link>
+                {authenticated !== "authenticated" && (
+                  <Link
+                    to={featureDetails.signUpLink}
+                    className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+                  >
+                    Sign Up
+                  </Link>
+                )}
               </div>
             </div>
           </section>

@@ -53,7 +53,7 @@ export default function Header({authStatus}) {
   const [open,setOpen] = useState(false)
 
   return (
-      <header style={{top:"0px"}} className="fixed z-50 w-screen p-4 lg:p-6 bg-white shadow-md dark:bg-gray-900">
+      <header style={{top:"0px"}} className="fixed z-50 w-screen p-4 lg:p-6 bg-white shadow-md dark:bg-gray-900 dark:shadow-[#666]">
         <div className="flex items-center">
           <Link to="/" className="flex items-center justify-center" >
             <DatabaseIcon className="h-6 w-6 dark:text-white" />

@@ -64,8 +64,8 @@ const TableEditor = ({ close }) => {
   };
 
   return (
-    <>
-      <div className="flex justify-between">
+    <div className="dark:text-gray-950">
+      <div className="flex justify-between ">
         <h3>
           {block?.type === BlockType.Table ? "Table" : "Enum"} Editor :
           <strong>{data?.name}</strong>
@@ -108,7 +108,7 @@ const TableEditor = ({ close }) => {
           value={data.options || []}
         />
       )}
-    </>
+    </div>
   );
 };
 

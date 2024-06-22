@@ -194,7 +194,7 @@ const UMLEditorWrapper = () => {
         });
 
         return (
-          <div className="enum-row-renderer-container">
+          <div className="enum-row-renderer-container dark:text-gray-950">
             <span>
               Total of {(blockData.data.options || []).length} Choices
             </span>

@@ -32,14 +32,14 @@ const LegendItem  = ({ item, marker }) => {
       >
         {getMarker()}
       </svg>
-      <span>{item.label}</span>
+      <span className="dark:text-gray-950">{item.label}</span>
     </div>
   );
 };
 
 const Legend = ({ items }) => {
   return (
-    <div className="legend">
+    <div className="legend dark:border-gray-950">
       <ul>
         {Object.keys(items).map((key, index) => {
           const typedKey = key;

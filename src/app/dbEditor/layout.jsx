@@ -104,7 +104,7 @@ function Layout({ blocksData,...props }) {
     >
       
       <div>
-        <div className="fixed p-4 lg:p-6 top-[4.5rem] w-screen bg-white z-[49]">
+        <div className="fixed p-4 lg:p-6 top-[4.5rem] w-screen bg-white z-[49] dark:bg-gray-900 dark:text-white ">
           <div className="flex items-center justify-between ">
             
             <Button type="button" variant="outline" onClick={showExample}>

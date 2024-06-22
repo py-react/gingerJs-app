@@ -72,5 +72,11 @@ module.exports = {
       },
     },
   },
+  variants: {
+    extend: {
+      stroke: ['dark'],
+      fill: ['dark'],
+    },
+  },
   plugins: [require("tailwindcss-animate")],
 };

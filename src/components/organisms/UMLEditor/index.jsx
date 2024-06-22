@@ -162,7 +162,7 @@ const UMLEditor = ({
   }, []);
 
   return (
-    <>
+    <div className="bg-white">
       <div className="canvas-container" onContextMenu={handleContextMenu}>
         {Object.values(blocks||[]).map((block) => (
           <Draggable
@@ -197,7 +197,16 @@ const UMLEditor = ({
                     toggleSlider(EditorTypeEnum.ROW, block.id, index)
                   }
                   key={index}
-                  className="row-content hoverable"
+                  className={`
+                    bg-white
+                    text-gray-950
+                    hover:bg-gray-700
+                    hover:text-white
+                    border-t-gray-950
+                    px-[20px]
+                    py-[10px]
+                    `
+                  }
                 >
                   <RowRenderer rowData={row} />
                 </div>
@@ -207,7 +216,16 @@ const UMLEditor = ({
                   onClick={() => {
                     addNewRow(block.id);
                   }}
-                  className="row-content hoverable"
+                  className={`
+                    bg-white
+                    text-gray-950
+                    hover:bg-gray-700
+                    hover:text-white
+                    border-t-gray-950
+                    px-[20px]
+                    py-[10px]
+                    `
+                  }
                 >
                   Add new row
                 </div>
@@ -269,13 +287,13 @@ const UMLEditor = ({
         {contextMenu && (
           <div
             ref={contextMenuRef}
-            className="context-menu"
+            className="context-menu absolute border z-[48] flex flex-col bg-white dark:bg-gray-950 dark:text-white"
             style={{ top: contextMenu.y, left: contextMenu.x }}
           >
-            <button onClick={() => handleAddBlock(BlockType.Table)}>
+            <button className="bg-white dark:bg-gray-950 dark:hover:bg-white/90 dark:hover:text-gray-950 hover:bg-white/90" onClick={() => handleAddBlock(BlockType.Table)}>
               Add Block
             </button>
-            <button onClick={() => handleAddBlock(BlockType.Enum)}>
+            <button className="bg-white dark:bg-gray-950 dark:hover:bg-white/90 dark:hover:text-gray-950 hover:bg-white/90" onClick={() => handleAddBlock(BlockType.Enum)}>
               Add Options
             </button>
           </div>
@@ -288,7 +306,7 @@ const UMLEditor = ({
         )}
       </Aside>
       <Legend items={legendConfigs} />
-    </>
+    </div>
   );
 };
 

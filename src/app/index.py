@@ -1,3 +1,7 @@
+from flask import session
+
 def index(request):
-    isDev = "true"
-    return {"isdev":isDev}
+    authenticated = "unauthenticated"
+    if "user" in  session:
+        authenticated = "authenticated"
+    return {"authenticated":authenticated}

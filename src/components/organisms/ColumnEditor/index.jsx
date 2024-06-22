@@ -79,7 +79,7 @@ const ColumnEditor = ({ close }) => {
   }
 
   return (
-    <>
+    <div className="dark:text-gray-950">
       <div className="flex justify-between" >
         <h3>
           Column Editor :<strong>{data?.name || row.id}</strong>
@@ -280,7 +280,7 @@ const ColumnEditor = ({ close }) => {
           </select>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
