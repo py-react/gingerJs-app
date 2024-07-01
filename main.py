@@ -10,7 +10,7 @@ from ginger_auth.auth import Google_Provider,Auth,Credentials_Provider
 # Load environment variables from a .env file
 load_dotenv()
 
-app = App(__name__, template_folder='build/templates',static_url_path='/static',static_folder='public/static/')
+app = App(__name__, template_folder='build/templates',static_url_path='/static',static_folder='build/static/')
 app.secret_key = '!secret'
 app.config.from_object('settings')
 
