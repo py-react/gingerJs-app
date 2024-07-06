@@ -10,7 +10,7 @@ cryptography==42.0.8
 Flask==3.0.3
 Flask-Cors==4.0.1
 ginger_auth @ git+https://github.com/py-react/gingerJs-auth.git@96790e92938f3bc67a8d61800f5ebe4bac923706
-ginger_js @ git+https://github.com/ginger-society/ginger-js.git@2006cbd59f3e5d16d50d83de515c0e5248d7cd4f
+ginger_js @ git+https://github.com/ginger-society/ginger-js.git@e0068bb6d95a2ebf71d3528d994e023bb3eb8e86
 gunicorn==22.0.0
 idna==3.7
 itsdangerous==2.2.0
