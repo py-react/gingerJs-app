@@ -1,2 +1,2 @@
-def index(request):
+async def GET(request):
     return {"api":"test"}

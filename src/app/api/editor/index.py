@@ -23,9 +23,8 @@ def retrieve_data():
     except Exception as e:
         return ({'error': str(e)})
 
-def index(request):
-    print("inside api")
-    if request.method == 'POST':
-        return save_data(request)
-    elif request.method == 'GET':
-        return retrieve_data()
+async def GET(request):
+    return retrieve_data()
+
+async def POST(request):
+    return save_data(request)

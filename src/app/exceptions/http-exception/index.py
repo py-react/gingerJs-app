@@ -1,4 +1,4 @@
-from werkzeug.exceptions import HTTPException,Unauthorized
+from fastapi.exceptions import HTTPException
 
-def index(request):
-    raise HTTPException(description="This is a custom Http exception request error message.")
+async def index(request):
+    raise HTTPException(detail="This is a custom Http exception request error message.",status_code=500)

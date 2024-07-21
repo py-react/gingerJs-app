@@ -1,4 +1,4 @@
-from werkzeug.exceptions import InternalServerError
+from fastapi.exceptions import HTTPException
 
-def index(request):
-    raise InternalServerError(description="This is a custom Internal server request error message.")
+async def index(request):
+    raise HTTPException(detail="This is a custom Internal server request error message.",status_code=501)
